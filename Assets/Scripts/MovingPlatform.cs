@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    // Start is called before the first frame update
+    float _speed;
+    float _currentPositionY;
+    float _maxYPosition;
+
     void Start()
     {
-        
+        _speed = Random.Range(1f, 4f);
+        _currentPositionY = transform.position.y;
+        _maxYPosition = _currentPositionY + 3f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(0, _speed * Time.deltaTime, 0);
+
+        if (transform.position.y >= _maxYPosition)
+            _speed = -_speed;
+        if (transform.position.y <= _currentPositionY)
+            _speed = Random.Range(1f, 6f);
     }
 }

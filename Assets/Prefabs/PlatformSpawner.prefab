@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPlatformObjects:
-  - {fileID: 3330466254878135322, guid: 06a87bd77ee348746a64cc447504998d, type: 3}
-  - {fileID: 539463247024630796, guid: 841c39963899e6c458633b0b902c6497, type: 3}
-  - {fileID: 2038702794041426169, guid: 81f5ab7b41f9fea49933f2e559cf898a, type: 3}
+  - {fileID: 5984171074665453779, guid: a2cb571588a80964589bf001ffcd9d15, type: 3}
+  - {fileID: 647577681523945022, guid: c88a4bc006f0c674fa6bbcd26a822488, type: 3}
+  - {fileID: 1242337109046999383, guid: 491617103628f3a48adc2a95395af4e1, type: 3}
