@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FadePlatform : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class FadePlatform : MonoBehaviour
     {
         textureColor = GetComponent<Renderer>().material.color;
         material = GetComponent<Renderer>().material;
-        duration = Random.Range(2f, 5f);
+        duration = Random.Range(3f, 6f);
         objectCollider = GetComponent<MeshCollider>();
     }
 
@@ -23,7 +21,10 @@ public class FadePlatform : MonoBehaviour
         material.color = textureColor;
 
         if (textureColor.a <= 0.3f && objectCollider.enabled)
+        {
             objectCollider.enabled = false;
+            duration = Random.Range(3f, 6f);
+        }
         else if (textureColor.a >= 0.4f && !objectCollider.enabled)
             objectCollider.enabled = true;
     }

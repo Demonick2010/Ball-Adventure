@@ -143,11 +143,47 @@ public class PlayerController : MonoBehaviour
             transform.LookAt(_player.transform);
         }
 
+        if (Input.GetKey(KeyCode.Q))
+        {
+            //We cache the mouse rotation values multiplied by the rotation speed
+            float y_rotate = 0 * rotationSpeed;
+            float x_rotate = -2 * rotationSpeed;
+
+            //We calculate the rotation angles based on the cached values and a specific axes
+            Quaternion xAngle = Quaternion.AngleAxis(y_rotate, Vector3.up);
+            Quaternion yAngle = Quaternion.AngleAxis(x_rotate, Vector3.left);
+
+            //We multiply the rotation angle by the camera offset 
+            _cameraOffset = xAngle * _cameraOffset;
+            _cameraOffset = yAngle * _cameraOffset;
+
+            //We make our transform to "look" at the target		
+            transform.LookAt(_player.transform);
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             //We cache the mouse rotation values multiplied by the rotation speed
             float y_rotate = -1 * rotationSpeed;
             float x_rotate = 0 * rotationSpeed;
+
+            //We calculate the rotation angles based on the cached values and a specific axes
+            Quaternion xAngle = Quaternion.AngleAxis(y_rotate, Vector3.up);
+            Quaternion yAngle = Quaternion.AngleAxis(x_rotate, Vector3.left);
+
+            //We multiply the rotation angle by the camera offset 
+            _cameraOffset = xAngle * _cameraOffset;
+            _cameraOffset = yAngle * _cameraOffset;
+
+            //We make our transform to "look" at the target		
+            transform.LookAt(_player.transform);
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            //We cache the mouse rotation values multiplied by the rotation speed
+            float y_rotate = 0 * rotationSpeed;
+            float x_rotate = 2 * rotationSpeed;
 
             //We calculate the rotation angles based on the cached values and a specific axes
             Quaternion xAngle = Quaternion.AngleAxis(y_rotate, Vector3.up);

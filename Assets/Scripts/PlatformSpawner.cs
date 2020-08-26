@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlatformSpawner : MonoBehaviour
 {
@@ -9,6 +6,6 @@ public class PlatformSpawner : MonoBehaviour
 
     void Start()
     {
-        Instantiate(SpawnPlatformObjects[UnityEngine.Random.Range(0, SpawnPlatformObjects.Length)], transform.position, Quaternion.identity);
+        Instantiate(SpawnPlatformObjects[Random.Range(0, SpawnPlatformObjects.Length)], transform.position, Quaternion.identity);
     }
 }

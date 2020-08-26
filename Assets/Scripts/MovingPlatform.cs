@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
@@ -10,9 +8,9 @@ public class MovingPlatform : MonoBehaviour
 
     void Start()
     {
-        _speed = Random.Range(1f, 4f);
+        _speed = Random.Range(0.5f, 4f);
         _currentPositionY = transform.position.y;
-        _maxYPosition = _currentPositionY + 3f;
+        _maxYPosition = _currentPositionY + 2.5f;
     }
 
     void Update()
@@ -22,6 +20,16 @@ public class MovingPlatform : MonoBehaviour
         if (transform.position.y >= _maxYPosition)
             _speed = -_speed;
         if (transform.position.y <= _currentPositionY)
-            _speed = Random.Range(1f, 6f);
+            _speed = Random.Range(0.5f, 4f);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        other.gameObject.transform.parent = gameObject.transform;
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        other.gameObject.transform.parent = null;
     }
 }
