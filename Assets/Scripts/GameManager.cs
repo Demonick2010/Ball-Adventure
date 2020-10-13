@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] float _energy;
     [SerializeField] int _lives;
     [SerializeField] [Range(0.01f, 15f)] float _moveEnergyPrice;
-    [SerializeField] [Range(0.01f, 20f)] float _stopEnergyPrice;
+    [SerializeField] [Range(0.01f, 50f)] float _stopEnergyPrice;
+    [SerializeField] bool _levelKey = false;
 
     // UI
     [SerializeField] Text _livesText;
@@ -110,6 +111,12 @@ public class GameManager : MonoBehaviour
     {
         get => _stopEnergyPrice;
         set => _stopEnergyPrice = value;
+    }
+
+    public bool LevelKey
+    {
+        get => _levelKey;
+        set => _levelKey = value;
     }
 
     #endregion

@@ -4,11 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
   - GameManager
   - Pivot
+  - Ground
   - PlatformPlaces
-  - TeleporterIn
   layers:
   - Default
   - TransparentFX
